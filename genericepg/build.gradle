@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.github.panpf.bintray-publish'
+
+//publish {
+//
+//    def groupProjectID = 'genericepg.duna.project'
+//    def artifactProjectID = 'tvepg'
+//    def publishVersionID = '1.0.5'
+//
+//    userOrg = 'dunatv'
+//    repoName = 'TV_EPG'
+//    groupId = groupProjectID
+//    artifactId = artifactProjectID
+//    publishVersion = publishVersionID
+//    desc = 'Android library for a performant Electronic Program Guide(EPG) using Recyclerview all the way up'
+//    website = 'https://github.com/Duna/TV-EPG-Android-Recyclerview'
+//
+//}
+
+android {
+    disableAutoTargetJvm()
+    lintOptions {
+        abortOnError false        // true by default
+        checkAllWarnings false
+        checkReleaseBuilds false
+        ignoreWarnings true       // false by default
+        quiet true                // false by default
+    }
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 4
+        versionName "1.4"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '30.0.2'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/genericepg.iml" filepath="$PROJECT_DIR$/.idea/genericepg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/genericepg.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/genericepg.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.iml" filepath="$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.iml" />
+    </modules>
+  </component>
+</project>
