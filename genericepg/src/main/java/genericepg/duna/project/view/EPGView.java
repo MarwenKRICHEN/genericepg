@@ -253,4 +253,46 @@ public class EPGView extends RelativeLayout {
         nowVerticalLineView.setVisibility(View.VISIBLE);
         nowTextView.setVisibility(View.VISIBLE);
     }
+
+    void scrollLeft() {
+        long hour = TimeUnit.HOURS.toMillis(1);
+        long fifteenMin = hour / 4;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                timelineRecyclerView.smoothScrollBy((int) -Utils.convertMillisecondsToPx(fifteenMin, getContext()), 0);
+            }
+        }, 0);
+    }
+
+    void scrollRight() {
+        long hour = TimeUnit.HOURS.toMillis(1);
+        long fifteenMin = hour / 4;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                timelineRecyclerView.smoothScrollBy((int) Utils.convertMillisecondsToPx(fifteenMin, getContext()), 0);
+            }
+        }, 0);
+    }
+
+    void scrollDown() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                channelsRecyclerView.smoothScrollBy(0, 100);
+                epgRecyclerView.smoothScrollBy(0, 100);
+            }
+        }, 0);
+    }
+
+    void scrollUp() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                channelsRecyclerView.smoothScrollBy(0, (int) -100);
+                epgRecyclerView.smoothScrollBy(0, (int) -100);
+            }
+        }, 0);
+    }
 }

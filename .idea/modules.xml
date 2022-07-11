@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/genericepg.iml" filepath="$PROJECT_DIR$/.idea/genericepg.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/genericepg.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/genericepg.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/genericepg.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/genericepg.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/genericepg.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/genericepg.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/genericepg.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/genericepg.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.iml" filepath="$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.main.iml" filepath="$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/genericepg/genericepg.genericepg.unitTest.iml" />
     </modules>
   </component>
 </project>
