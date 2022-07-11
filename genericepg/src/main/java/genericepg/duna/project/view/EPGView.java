@@ -254,7 +254,7 @@ public class EPGView extends RelativeLayout {
         nowTextView.setVisibility(View.VISIBLE);
     }
 
-    void scrollLeft() {
+    public void scrollLeft() {
         long hour = TimeUnit.HOURS.toMillis(1);
         long fifteenMin = hour / 4;
         new Handler().postDelayed(new Runnable() {
@@ -265,7 +265,7 @@ public class EPGView extends RelativeLayout {
         }, 0);
     }
 
-    void scrollRight() {
+    public void scrollRight() {
         long hour = TimeUnit.HOURS.toMillis(1);
         long fifteenMin = hour / 4;
         new Handler().postDelayed(new Runnable() {
@@ -276,7 +276,7 @@ public class EPGView extends RelativeLayout {
         }, 0);
     }
 
-    void scrollDown() {
+    public void scrollDown() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -286,7 +286,7 @@ public class EPGView extends RelativeLayout {
         }, 0);
     }
 
-    void scrollUp() {
+    public void scrollUp() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
