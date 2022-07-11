@@ -44,7 +44,7 @@ import genericepg.duna.project.observable.Subject;
 import genericepg.duna.project.utils.Utils;
 import genericepg.duna.project.view.EPGView;
 
-public class MainActivity extends AppCompatActivity implements RecyclerItemClickListener.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements RecyclerItemClickListener.OnItemClickListener, RecyclerItemClickListener.OnScrolledListener {
     private ArrayList<ProgramModel> horizontalList;
     private ArrayList<ChannelModel> headerChannelsList;
     private ArrayList<TimelineModel> timelineList;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
         epgView = findViewById(R.id.epg);
         createDummyData();
 
-        epgAdapter = new GenericEpgAdapter(verticalList, this) {
+        epgAdapter = new GenericEpgAdapter(verticalList, this, this) {
             @Override
             public GenericProgramsAdapter programsCreator(ArrayList programList, final Subject subject) {
                 return new GenericProgramsAdapter(programList) {
@@ -280,5 +280,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerItemClick
     public void onItemClick(View view, int position) {
         TextView title = view.findViewById(R.id.program_title);
         Toast.makeText(this, "Item with position clicked: " + position + " and description " + title.getText(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onScrolled(int dx, int dy) {
+//        epgView.scrollHorizontally(dx);
     }
 }

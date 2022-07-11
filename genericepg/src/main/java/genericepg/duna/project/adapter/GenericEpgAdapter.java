@@ -26,6 +26,7 @@ public abstract class GenericEpgAdapter<T extends BaseProgramModel> extends Recy
     private ArrayList<ArrayList<T>> channelsList;
     private Subject subject;
     private RecyclerItemClickListener.OnItemClickListener listener;
+    private RecyclerItemClickListener.OnScrolledListener scrolledListener;
 
     public void setSubject(Subject subject) {
         this.subject = subject;
@@ -49,6 +50,20 @@ public abstract class GenericEpgAdapter<T extends BaseProgramModel> extends Recy
                     }
                 }
             }));
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                }
+
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    super.onScrolled(recyclerView, dx, dy);
+                    Log.d("ScrollerListener", "dx: " + dx);
+                    if (scrolledListener != null)
+                        scrolledListener.onScrolled(dx, dy);
+                }
+            });
         }
 
         public void setList(ArrayList<T> horizontalList) {
@@ -67,9 +82,10 @@ public abstract class GenericEpgAdapter<T extends BaseProgramModel> extends Recy
         }
     }
 
-    public GenericEpgAdapter(ArrayList<ArrayList<T>> verticalList, RecyclerItemClickListener.OnItemClickListener listener) {
+    public GenericEpgAdapter(ArrayList<ArrayList<T>> verticalList, RecyclerItemClickListener.OnItemClickListener listener, RecyclerItemClickListener.OnScrolledListener scrolledListener) {
         this.channelsList = verticalList;
         this.listener = listener;
+        this.scrolledListener = scrolledListener;
         recycledViewPool = new RecyclerView.RecycledViewPool();
         recycledViewPool.setMaxRecycledViews(R.layout.vrecycler_view_item, 20);
     }

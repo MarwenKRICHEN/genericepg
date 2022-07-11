@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -292,6 +293,15 @@ public class EPGView extends RelativeLayout {
             public void run() {
                 channelsRecyclerView.smoothScrollBy(0, (int) -100);
                 epgRecyclerView.smoothScrollBy(0, (int) -100);
+            }
+        }, 0);
+    }
+
+    public void scrollHorizontally(int dx) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                timelineRecyclerView.scrollBy(dx, 0);
             }
         }, 0);
     }
